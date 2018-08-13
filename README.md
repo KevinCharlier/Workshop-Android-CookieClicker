@@ -142,7 +142,7 @@ Déclarez la variable suivante en **global**.
 
 ````java
 
- Button btnStart;
+ private  Button btnStart;
  ````
 
  Ensuite on va l'assigner dans méthode ``onCreate()``
@@ -177,7 +177,108 @@ Très bien, aller dans le fichier manifest.xml et entre les balises application 
   <activity android:name=".GameActivity" />
 ````
 
+
+**Layout de game_activity**
+
+On va tout d'abord défibir un background
+````xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity"
+    android:background="@drawable/background"
+    >
+````
+
+Cette fois nous allons utiliser le Relative Layout 
+````xml
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+</RelativeLayout>
+````
+
+Entre ces deux balises vous rajoutez ceci, il s'agit du cookie 
+
+````xml 
+  <ImageView
+            android:id="@+id/cookie"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@drawable/cookie"
+            android:layout_centerHorizontal="true"/>
+````
+
+Ensuite on va rajouter un textview pour les points
+
+````xml
+   <TextView
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Points"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorWhite"
+            />
+````
+
 #### Le code dans Game Activity.
+Dans ce context ci, nous avons besoin de deux variables pour les views.
+Une pour afficher les points, et une autre ppour récupérer l'image. On doit les déclarer en global.
+
+
+````java 
+    private TextView pointsView;
+    private ImageView cookie;
+````
+
+On doit également créer une variable qui comptera le nombre de clicks effectuer par le joueur
+
+
+````java
+int clicks = 0;
+````
+
+On assigne les variables dans la méthode onCreate()
+
+````java
+    this.pointsView = findViewById(R.id.points);
+    this.cookie = findViewById(R.id.cookie);
+````
+
+On met un Listener sur le cookie 
+
+````java
+     cookie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
+````
+
+Et dans la méthode onClick, on incrémente la variable clicks et on l'affiche
+ ````java
+
+    points++;
+    pointsView.setText("Points : " + points);
+
+ ````
+
+ Et on run l'application pour voir ce que cela donne. 
+
+
+
+
+
+
+
+
+
 
 
 
