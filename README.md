@@ -132,7 +132,7 @@ Et ensuite un boutton qui permettra au joueur de commencer le jeu.
 Retenez bien les id's, on devoir s'en servir.
 
 
-#### Le code dans MainActivity
+### Le code dans MainActivity
 
 Allez dans le MainActivity.
 
@@ -180,7 +180,7 @@ Très bien, aller dans le fichier manifest.xml et entre les balises application 
 
 **Layout de game_activity**
 
-On va tout d'abord défibir un background
+On va tout d'abord définir un background
 ````xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -226,7 +226,7 @@ Ensuite on va rajouter un textview pour les points
             />
 ````
 
-#### Le code dans Game Activity.
+### Le code dans Game Activity.
 Dans ce context ci, nous avons besoin de deux variables pour les views.
 Une pour afficher les points, et une autre ppour récupérer l'image. On doit les déclarer en global.
 
