@@ -127,6 +127,7 @@ Et ensuite un boutton qui permettra au joueur de commencer le jeu.
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="C'est parti !"/>
+</LinearLayout>
 ````
 
 Retenez bien les id's, on devoir s'en servir.
